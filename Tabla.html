@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #display {
+            border: 3px solid blueviolet;
+            border-radius: 10px;
+            padding: 10px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Tabla de multiplicar</h1>
+
+    Número: <input type="number" id="Numero" min="1" max="10">
+    <button onclick="Formulario()">Hacer tabla de multiplicar</button>
+
+    <div id="display">
+
+        
+    </div>
+
+    <script>
+
+        function Formulario(){
+            let n1 = document.getElementById("Numero").value;
+            Calcular(n1);
+        }
+
+        function Calcular(n1){
+            let resultado = "";
+            for (let i = 1; i <= 10; i++){
+                let result = n1 * i;
+                resultado += n1 + " x " + i + " = " + result + "<br>";
+            }
+            display.innerHTML = "La tabla del " + n1 + "<br>" + resultado;
+        }
+
+    </script>
+    
+</body>
+</html>
