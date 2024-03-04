@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #display{
+            text-align: center;
+            font-size: 20px;
+        }
+        #display2{
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+ 
+   
+    <p><label for="concepto">Concepto: <input type="text" name="concepto" id="concepto"></label></p>
+    <p><label for="importe">Importe: <input type="number" name="importe" id="importe" min="1"></label></p>
+
+    <button onclick="Formulario()">Añadir</button>
+
+    <div id="display" style="border: 2px solid black;">
+    
+
+    </div>
+
+    <div id="display2">
+
+    </div>
+
+    <script>
+        function Formulario(){
+            let concepto = document.getElementById("concepto").value
+            let importe = document.getElementById("importe").value
+            ImprimirConcepto(concepto);
+            ImprimirImporte(importe);
+        }        
+        function ImprimirConcepto(concepto){
+            let texto = "";
+            texto += concepto + "<br>"
+            display.innerHTML = texto 
+
+
+        }
+        function ImprimirImporte(importe){
+            let texto = "";
+            texto += importe + "<br>"
+            display2.innerHTML = texto;
+        }
+
+    </script>
+</body>
+</html>
