@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Haz un formulario con un título Pedido”. El formulario tendrá los siguientes campos
+        Un select con las siguientes opciones: “Elija producto”, “Ordenador”, “Portátil” y ”Tablet”. Tendrá la etiqueta “Producto: “
+        Debajo del select habrá una imagen de 200x200 que cambiará según la elección que hagamos, mostrando la foto de un ordenador, un portátil o una Tablet según sea la elección 
+        El formulario debe validar que se ha elegido un producto antes de enviar los datos.
+        </p>
+
+        <form action="a.php">Pedido
+
+            <select name="opciones" id="opciones" onchange="Cambio()">
+                <option value="elija">Elija producto</option>
+                <option value="ordenador">Ordenador</option>
+                <option value="portatil">Portátil</option>
+                <option value="tablet">Tablet</option>
+            </select>
+        </form>
+        
+        <p id="display">
+            <img src="https://cdn.grupoelcorteingles.es/SGFM/dctm/MEDIA03/202309/20/00194612201049____11__640x640.jpg" alt="" id="foto1" hidden>
+            <img src="https://m.media-amazon.com/images/I/410AsDnsvqL._SL500_.jpg" alt="" id="foto2" hidden>
+            <img src="https://comprofacil.es/wp-content/uploads/2023/03/COOLPC-Silver-600x450.jpg" alt="" id="foto3" hidden>
+        </p>
+
+        <p>Haz un formulario con un campo “Usuario” de tipo texto y un campo de tipo checkbox que diga “He leído y acepto las condiciones” 
+            El formulario debe dar error si la longitud del usuario es menor que 5 y si no se ha mercado el checkbox.</p>
+
+            <form action="b.php" onsubmit="return Enviar()">
+                Usuario: <input type="text" id="usuario" name="usuario"><br><br>    
+                Aceptar términos y condiciones<input type="checkbox" id="caja" name="caja">
+                <input type="submit" value="Enviar" >
+            </form>
+
+        <script> 
+            function Enviar(){
+                let caja = document.getElementById("caja");
+                let usuario = document.getElementById("usuario").value;
+
+                if(usuario.length < 5 ){
+                    alert("Error, el nombre es demasiado corto");
+                    usuario = document.getElementById("usuario").focus();
+                    return false;
+                }
+                if(!caja.checked){
+                    alert('Error, debes aceptar los terminos');
+                    caja.focus();
+                    return false;
+                }
+            }
+
+            function Cambio(){
+                let opciones = document.getElementById("opciones").value
+                let foto1 = document.getElementById("foto1");
+                let foto2 = document.getElementById("foto2");
+                let foto3 = document.getElementById("foto3");
+
+
+                if(opciones == "ordenador"){
+                    foto1.removeAttribute('hidden');
+                } else {
+                    foto1.setAttribute('hidden','');
+                }
+
+                if(opciones == "tablet"){
+                    foto2.removeAttribute('hidden');
+                } else {
+                    foto2.setAttribute('hidden','');
+                }
+
+                if(opciones == "portatil"){      
+                    foto3.removeAttribute('hidden');          
+                } else {
+                    foto3.setAttribute('hidden','');
+                }
+            }
+
+            
+
+        </script>
+</body>
+</html>
