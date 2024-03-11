@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Haz un programa que te pida cuatro números y te devuelva la media de los cuatro. 
+    Para ello deberás convertirlos previamente  a enteros con la función  entero=Number(numero); ( el programa se ejecuta desde un botón )</p>
+
+        <button onclick="Pedir()">Calcular la media</button>
+
+    <p>Haz un programa que pida el nombre de una persona y su edad. Luego el nombre de otra persona y su edad y que sea capaza de decir:
+    “Fulanito en mayor  que menganito”, “Fulanito es menor que menganito” o “Fulanito y Menganito tienen la misma edad”</p>
+
+        <button onclick="PedirNombres()">Comparar edades</button>
+
+        <script>
+            function Pedir(){
+                let n1 = prompt('Introduce un numero');
+                let n2 = prompt('Introduce segundo numero');
+                let n3 = prompt('Introduce tercer numero');
+                let n4 = prompt('Introduce cuarto numero');
+                
+                let media = Media(n1,n2,n3,n4);
+            }
+
+            function Media(n1,n2,n3,n4){
+                let media =(Number(n1) + Number(n2) + Number(n3) + Number(n4))/4;
+
+                alert('La media de los cuatro numeros es: '+media);
+            }
+
+            function PedirNombres(){
+                let nombre1 = prompt('Dime tu nombre');
+                let edad1 = prompt('Dime tu edad');
+
+                let nombre2 = prompt('Dime otro nombre');
+                let edad2 = prompt('Dime tu edad');
+
+                let comprobar = Comprobar(nombre1,nombre2,edad1,edad2);
+
+            }
+
+            function Comprobar(nombre1,nombre2,edad1,edad2){
+                let n1 = Number(edad1);
+                let n2 = Number(edad2);
+
+                if(n1 > n2){
+                    alert(nombre1+' es mayor que '+nombre2);
+
+                } else if(n2 > n1){
+                    alert(nombre2+' es mayor que '+nombre1);
+                } else {
+                    alert(nombre1+' y '+nombre2+" tienen la misma edad");
+                }
+                
+            }
+
+
+        </script>
+</body>
+</html>
