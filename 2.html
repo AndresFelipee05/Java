@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Haz una página  con un H1 con el id “titulo”. En principio el h1 no contiene nada. 
+        Al pulsar un botón pedirá el nombre de usuario y lo pondrá como contenido de este H1, con el texto “La página de fulanito” suponiendo que ha puesto fulanito como nombre de usuario.
+        Añade un botón con el título “Añade un poco de color” al pulsarlo ese mismo h1 se pone de color de letra roja y color de fondo amarillo y tamaño 3em.</p>
+
+        <h1 id="titulo"></h1>
+
+        <button onclick="Pulsar()">Pulsa aquí</button>
+        <button onclick="Color()">Añade un poco de color</button>
+
+
+        <script>
+            function Pulsar(){
+                let nombre = prompt('Introduce tu numero');
+
+                titulo.innerHTML = ("La pagina de "+nombre);
+            }
+
+            function Color(){
+                let miTitulo = document.getElementById("titulo");
+
+                miTitulo.style.color = "red";
+                miTitulo.style.background = "yellow";
+                miTitulo.style.fontSize = "3em";
+            }
+
+
+        </script>
+</body>
+</html>
